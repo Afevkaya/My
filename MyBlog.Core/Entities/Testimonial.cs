@@ -1,3 +1,5 @@
+using MyBlog.Core.Entities.Base.Concrete;
+
 namespace MyBlog.Core.Entities;
 
 public class Testimonial: ModifiableEntity
