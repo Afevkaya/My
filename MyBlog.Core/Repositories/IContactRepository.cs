@@ -5,7 +5,7 @@ namespace MyBlog.Core.Repositories;
 public interface IContactRepository
 {
     IQueryable<Contact> GetQueryable();
-    Task<ICollection<Contact>> GetAboutsAsync();
+    Task<ICollection<Contact>> GetsAsync();
     Task<Contact> GetAsync(int id);
     Task<Contact> InsertAsync(Contact entity);
     Task UpdateAsync(Contact entity);

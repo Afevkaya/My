@@ -5,7 +5,7 @@ namespace MyBlog.Core.Repositories;
 public interface IAboutRepository
 {
     IQueryable<About> GetQueryable();
-    Task<ICollection<About>> GetAboutsAsync();
+    Task<ICollection<About>> GetsAsync();
     Task<About> GetAsync(int id);
     Task<About> InsertAsync(About entity);
     Task UpdateAsync(About entity);

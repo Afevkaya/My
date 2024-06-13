@@ -5,7 +5,7 @@ namespace MyBlog.Core.Repositories;
 public interface IExperinceRepository
 {
     IQueryable<Experience> GetQueryable();
-    Task<ICollection<Experience>> GetAboutsAsync();
+    Task<ICollection<Experience>> GetsAsync();
     Task<Experience> GetAsync(int id);
     Task<Experience> InsertAsync(Experience entity);
     Task UpdateAsync(Experience entity);

@@ -5,7 +5,7 @@ namespace MyBlog.Core.Repositories;
 public interface IFeatureRepository
 {
     IQueryable<Feature> GetQueryable();
-    Task<ICollection<Feature>> GetAboutsAsync();
+    Task<ICollection<Feature>> GetsAsync();
     Task<Feature> GetAsync(int id);
     Task<Feature> InsertAsync(Feature entity);
     Task UpdateAsync(Feature entity);

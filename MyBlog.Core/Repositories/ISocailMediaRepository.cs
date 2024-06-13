@@ -5,7 +5,7 @@ namespace MyBlog.Core.Repositories;
 public interface ISocailMediaRepository
 {
     IQueryable<SocialMedia> GetQueryable();
-    Task<ICollection<SocialMedia>> GetAboutsAsync();
+    Task<ICollection<SocialMedia>> GetsAsync();
     Task<SocialMedia> GetAsync(int id);
     Task<SocialMedia> InsertAsync(SocialMedia entity);
     Task UpdateAsync(SocialMedia entity);
