@@ -4,7 +4,6 @@ namespace MyBlog.Core.Entities;
 
 public class Message: ModifiableEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public string Mail { get; set; }
     public string Content { get; set; }

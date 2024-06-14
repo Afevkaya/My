@@ -1,12 +1,12 @@
-using MyBlog.Core.Entities;
+using MyBlog.Core.DTOs.Response.Service;
 
 namespace MyBlog.Core.Services;
 
 public interface IServiceService
 {
-    Task<ICollection<Service>> GetsAsync();
-    Task<Service> GetAsync(int id);
-    Task<Service> InsertAsync(Service entity);
-    Task UpdateAsync(Service entity);
-    Task RemoveAsync(Service entity);
+    Task<ICollection<ResponseService>> GetsAsync();
+    Task<ResponseService> GetAsync(int id);
+    Task<ResponseService> InsertAsync(ResponseService entity);
+    Task UpdateAsync(ResponseService entity);
+    Task RemoveAsync(ResponseService entity);
 }

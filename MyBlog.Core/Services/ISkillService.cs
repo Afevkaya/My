@@ -1,12 +1,12 @@
-using MyBlog.Core.Entities;
+using MyBlog.Core.DTOs.Response.Skill;
 
 namespace MyBlog.Core.Services;
 
 public interface ISkillService
 {
-    Task<ICollection<Skill>> GetsAsync();
-    Task<Skill> GetAsync(int id);
-    Task<Skill> InsertAsync(Skill entity);
-    Task UpdateAsync(Skill entity);
-    Task RemoveAsync(Skill entity);
+    Task<ICollection<ResponseSkill>> GetsAsync();
+    Task<ResponseSkill> GetAsync(int id);
+    Task<ResponseSkill> InsertAsync(ResponseSkill entity);
+    Task UpdateAsync(ResponseSkill entity);
+    Task RemoveAsync(ResponseSkill entity);
 }

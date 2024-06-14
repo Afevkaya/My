@@ -1,12 +1,12 @@
-using MyBlog.Core.Entities;
+using MyBlog.Core.DTOs.Response.Contact;
 
 namespace MyBlog.Core.Services;
 
 public interface IContactService
 {
-    Task<ICollection<Contact>> GetsAsync();
-    Task<Contact> GetAsync(int id);
-    Task<Contact> InsertAsync(Contact entity);
-    Task UpdateAsync(Contact entity);
-    Task RemoveAsync(Contact entity);
+    Task<ICollection<ResponseContact>> GetsAsync();
+    Task<ResponseContact> GetAsync(int id);
+    Task<ResponseContact> InsertAsync(ResponseContact entity);
+    Task UpdateAsync(ResponseContact entity);
+    Task RemoveAsync(ResponseContact entity);
 }

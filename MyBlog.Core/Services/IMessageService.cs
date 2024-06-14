@@ -1,12 +1,12 @@
-using MyBlog.Core.Entities;
+using MyBlog.Core.DTOs.Response.Message;
 
 namespace MyBlog.Core.Services;
 
 public interface IMessageService
 {
-    Task<ICollection<Message>> GetsAsync();
-    Task<Message> GetAsync(int id);
-    Task<Message> InsertAsync(Message entity);
-    Task UpdateAsync(Message entity);
-    Task RemoveAsync(Message entity);
+    Task<ICollection<ResponseMessage>> GetsAsync();
+    Task<ResponseMessage> GetAsync(int id);
+    Task<ResponseMessage> InsertAsync(ResponseMessage entity);
+    Task UpdateAsync(ResponseMessage entity);
+    Task RemoveAsync(ResponseMessage entity);
 }

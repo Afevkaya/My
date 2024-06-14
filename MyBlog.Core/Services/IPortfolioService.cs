@@ -1,12 +1,12 @@
-using MyBlog.Core.Entities;
+using MyBlog.Core.DTOs.Response.Portfolio;
 
 namespace MyBlog.Core.Services;
 
 public interface IPortfolioService
 {
-    Task<ICollection<Portfolio>> GetsAsync();
-    Task<Portfolio> GetAsync(int id);
-    Task<Portfolio> InsertAsync(Portfolio entity);
-    Task UpdateAsync(Portfolio entity);
-    Task RemoveAsync(Portfolio entity);
+    Task<ICollection<ResponsePortfolio>> GetsAsync();
+    Task<ResponsePortfolio> GetAsync(int id);
+    Task<ResponsePortfolio> InsertAsync(ResponsePortfolio entity);
+    Task UpdateAsync(ResponsePortfolio entity);
+    Task RemoveAsync(ResponsePortfolio entity);
 }
