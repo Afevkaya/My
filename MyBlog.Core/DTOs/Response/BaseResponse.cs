@@ -2,7 +2,7 @@ namespace MyBlog.Core.DTOs.Response;
 
 public class BaseResponse
 {
-     public int Id { get; set; }
+    public int Id { get; set; }
     public virtual DateTime CreatedOn { get; set; }
     public virtual int CreatedBy { get; set; }
     public virtual DateTime? UpdatedOn { get; set; }
