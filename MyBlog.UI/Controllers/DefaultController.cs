@@ -14,4 +14,9 @@ public class DefaultController : Controller
     {
         return PartialView();
     }
+
+    public PartialViewResult NavbarPartial()
+    {
+        return PartialView();
+    }
 }
