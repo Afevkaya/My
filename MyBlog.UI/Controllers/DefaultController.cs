@@ -9,4 +9,9 @@ public class DefaultController : Controller
     {
         return View();
     }
+
+    public PartialViewResult HeaderPartial()
+    {
+        return PartialView();
+    }
 }
