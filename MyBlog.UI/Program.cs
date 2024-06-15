@@ -16,6 +16,10 @@ builder.Services.AddDbContext<MyBlogDbContext>(options =>
 
 builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
+builder.Services.AddScoped<IAboutRepository, AboutRepository>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+builder.Services.AddScoped<IServiceService, ServiceService>();
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
