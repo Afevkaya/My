@@ -5,11 +5,11 @@ namespace MyBlog.Repositories;
 
 public class MyBlogDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public MyBlogDbContext(DbContextOptions<MyBlogDbContext> options): base(options)
     {
-        optionsBuilder.UseSqlServer("Server=localhost;Database=MyBlogDb;User ID=SA;Password=Muhammet.evkaya.1;Trusted_Connection=False;Encrypt=False;");
+        
     }
-
+    
     public DbSet<About> Abouts { get; set; }
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Experience> Experiences { get; set; }

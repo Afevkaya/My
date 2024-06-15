@@ -1,7 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using MyBlog.Core.Repositories;
+using MyBlog.Core.Services;
+using MyBlog.Repositories;
+using MyBlog.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MyBlogDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlConnection"));
+});
+
+builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 var app = builder.Build();
 
