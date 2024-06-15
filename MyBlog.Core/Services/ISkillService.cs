@@ -5,9 +5,9 @@ namespace MyBlog.Core.Services;
 
 public interface ISkillService
 {
-    Task<ICollection<ApiBaseResponse<ResponseSkill>>> GetsAsync();
-    Task<ApiBaseResponse<ResponseSkill>> GetAsync(int id);
-    Task<ApiBaseResponse<ResponseSkill>> InsertAsync(ResponseSkill entity);
-    Task UpdateAsync(ResponseSkill entity);
-    Task RemoveAsync(ResponseSkill entity);
+    Task<ApiBaseResponse<List<ResponseSkill>>> GetsAsync();
+    // Task<ApiBaseResponse<ResponseSkill>> GetAsync(int id);
+    // Task<ApiBaseResponse<ResponseSkill>> InsertAsync(ResponseSkill entity);
+    // Task UpdateAsync(ResponseSkill entity);
+    // Task RemoveAsync(ResponseSkill entity);
 }
