@@ -5,9 +5,9 @@ namespace MyBlog.Core.Services;
 
 public interface ITestimonialService
 {
-    Task<ICollection<ApiBaseResponse<ResponseTestimonial>>> GetsAsync();
-    Task<ApiBaseResponse<ResponseTestimonial>> GetAsync(int id);
-    Task<ApiBaseResponse<ResponseTestimonial>> InsertAsync(ResponseTestimonial entity);
-    Task UpdateAsync(ResponseTestimonial entity);
-    Task RemoveAsync(ResponseTestimonial entity);
+    Task<ApiBaseResponse<List<ResponseTestimonial>>> GetsAsync();
+    // Task<ApiBaseResponse<ResponseTestimonial>> GetAsync(int id);
+    // Task<ApiBaseResponse<ResponseTestimonial>> InsertAsync(ResponseTestimonial entity);
+    // Task UpdateAsync(ResponseTestimonial entity);
+    // Task RemoveAsync(ResponseTestimonial entity);
 }

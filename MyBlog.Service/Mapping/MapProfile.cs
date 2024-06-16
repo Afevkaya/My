@@ -6,6 +6,7 @@ using MyBlog.Core.DTOs.Response.Feature;
 using MyBlog.Core.DTOs.Response.Portfolio;
 using MyBlog.Core.DTOs.Response.Service;
 using MyBlog.Core.DTOs.Response.Skill;
+using MyBlog.Core.DTOs.Response.Testimonial;
 using MyBlog.Core.Entities;
 
 namespace MyBlog.Services;
@@ -26,5 +27,7 @@ public class MapProfile: Profile
         CreateMap<Portfolio, ResponsePortfolio>().ReverseMap();
 
         CreateMap<Experience, ResponseExperience>().ReverseMap();
+
+        CreateMap<Testimonial, ResponseTestimonial>().ReverseMap();
     }
 }
