@@ -36,7 +36,7 @@ public class DefaultController : Controller
     }
 
     [HttpPost]
-    public async Task<PartialViewResult> SendMassegePartial(RequestInsertMessage request)
+    public async Task<PartialViewResult> SendMessagePartial(RequestInsertMessage request)
     {
         await _messageService.InsertAsync(request);
         return PartialView();
