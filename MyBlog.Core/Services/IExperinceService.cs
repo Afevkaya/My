@@ -5,9 +5,9 @@ namespace MyBlog.Core.Services;
 
 public interface IExperinceService
 {
-    Task<ICollection<ApiBaseResponse<ResponseExperience>>> GetsAsync();
-    Task<ApiBaseResponse<ResponseExperience>> GetAsync(int id);
-    Task<ApiBaseResponse<ResponseExperience>> InsertAsync(ResponseExperience entity);
-    Task UpdateAsync(ResponseExperience entity);
-    Task RemoveAsync(ResponseExperience entity);
+    Task<ApiBaseResponse<List<ResponseExperience>>> GetsAsync();
+    // Task<ApiBaseResponse<ResponseExperience>> GetAsync(int id);
+    // Task<ApiBaseResponse<ResponseExperience>> InsertAsync(ResponseExperience entity);
+    // Task UpdateAsync(ResponseExperience entity);
+    // Task RemoveAsync(ResponseExperience entity);
 }

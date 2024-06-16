@@ -24,6 +24,8 @@ builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<ISkillService, SkillService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+builder.Services.AddScoped<IExperinceRepository, ExperienceRepository>();
+builder.Services.AddScoped<IExperinceService, ExperienceService>();
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 

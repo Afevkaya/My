@@ -1,6 +1,7 @@
 using AutoMapper;
 using MyBlog.Core.DTOs.Request.About;
 using MyBlog.Core.DTOs.Response.About;
+using MyBlog.Core.DTOs.Response.Experience;
 using MyBlog.Core.DTOs.Response.Feature;
 using MyBlog.Core.DTOs.Response.Portfolio;
 using MyBlog.Core.DTOs.Response.Service;
@@ -23,5 +24,7 @@ public class MapProfile: Profile
         CreateMap<Skill, ResponseSkill>().ReverseMap();
 
         CreateMap<Portfolio, ResponsePortfolio>().ReverseMap();
+
+        CreateMap<Experience, ResponseExperience>().ReverseMap();
     }
 }
