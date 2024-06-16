@@ -10,12 +10,16 @@
       <div class="grid-sizer"></div>
       @foreach(var portfolio in Model)
       {
-         <div class="grid-item"><a href="https://dribbble.com">
-          <figure class="portfolio-item"><img src="@portfolio.ImageUrl" data-bp="@portfolio.ImageUrl2"/>
-            <figcaption>
-              <h4 class="h5 mb-0">@portfolio.Name</h4>
-            </figcaption>
-          </figure></a>
+         <div class="grid-item">
+          <a href="https://dribbble.com">
+            <figure class="portfolio-item">
+              <img src="@portfolio.ImageUrl" data-bp="@portfolio.ImageUrl2"/>
+              <figcaption>
+                <h4 class="h5 mb-0">@portfolio.Name</h4>
+                <div>@portfolio.PorjectUrl</div>
+              </figcaption>
+            </figure>
+          </a>
         </div>
       }
     </div>
