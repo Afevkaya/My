@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using MyBlog.Core.Entities;
 
 namespace MyBlog.Repositories;

@@ -6,4 +6,6 @@ public class Portfolio: ModifiableEntity
 {
     public string Name { get; set; }
     public string ImageUrl { get; set; }
+    public string ImageUrl2 { get; set; }
+    public string PorjectUrl { get; set; }
 }
