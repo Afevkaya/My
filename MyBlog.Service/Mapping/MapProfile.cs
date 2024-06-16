@@ -1,8 +1,11 @@
 using AutoMapper;
+using MyBlog.Core.DTOs.Request;
 using MyBlog.Core.DTOs.Request.About;
 using MyBlog.Core.DTOs.Response.About;
+using MyBlog.Core.DTOs.Response.Contact;
 using MyBlog.Core.DTOs.Response.Experience;
 using MyBlog.Core.DTOs.Response.Feature;
+using MyBlog.Core.DTOs.Response.Message;
 using MyBlog.Core.DTOs.Response.Portfolio;
 using MyBlog.Core.DTOs.Response.Service;
 using MyBlog.Core.DTOs.Response.Skill;
@@ -29,5 +32,10 @@ public class MapProfile: Profile
         CreateMap<Experience, ResponseExperience>().ReverseMap();
 
         CreateMap<Testimonial, ResponseTestimonial>().ReverseMap();
+
+        CreateMap<Contact, ResponseContact>().ReverseMap();
+
+        CreateMap<Message, ResponseMessage>().ReverseMap();
+        CreateMap<RequestInsertMessage, Message>().ReverseMap();
     }
 }

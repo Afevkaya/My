@@ -5,9 +5,9 @@ namespace MyBlog.Core.Services;
 
 public interface IContactService
 {
-    Task<ICollection<ApiBaseResponse<ResponseContact>>> GetsAsync();
-    Task<ApiBaseResponse<ResponseContact>> GetAsync(int id);
-    Task<ApiBaseResponse<ResponseContact>> InsertAsync(ResponseContact entity);
-    Task UpdateAsync(ResponseContact entity);
-    Task RemoveAsync(ResponseContact entity);
+    Task<ApiBaseResponse<List<ResponseContact>>> GetsAsync();
+    // Task<ApiBaseResponse<ResponseContact>> GetAsync(int id);
+    // Task<ApiBaseResponse<ResponseContact>> InsertAsync(ResponseContact entity);
+    // Task UpdateAsync(ResponseContact entity);
+    // Task RemoveAsync(ResponseContact entity);
 }

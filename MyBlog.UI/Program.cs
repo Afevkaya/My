@@ -28,6 +28,10 @@ builder.Services.AddScoped<IExperinceRepository, ExperienceRepository>();
 builder.Services.AddScoped<IExperinceService, ExperienceService>();
 builder.Services.AddScoped<ITestimonialRepository, TestimonialRepository>();
 builder.Services.AddScoped<ITestimonialService, TestimonialService>();
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
