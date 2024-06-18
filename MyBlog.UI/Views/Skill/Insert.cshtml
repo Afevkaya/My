@@ -1,0 +1,16 @@
+@model MyBlog.Core.DTOs.Request.Skill.RequestInsertSkill
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<form class="form-group" asp-action="Insert" method="post">
+    <label class="form-control" asp-for="Title">Yetenek Başlığı</label>
+    <input class="form-control" asp-for="Title" />
+    <br>
+    <label class="form-control" asp-for="Value">Yetenek Oran</label>
+    <input class="form-control" asp-for="Value" />
+    <br>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>

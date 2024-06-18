@@ -26,6 +26,7 @@ public class MapProfile: Profile
         CreateMap<Service, ResponseService>().ReverseMap();
 
         CreateMap<Skill, ResponseSkill>().ReverseMap();
+        CreateMap<RequestInsertService, Skill>().ReverseMap();
 
         CreateMap<Portfolio, ResponsePortfolio>().ReverseMap();
 

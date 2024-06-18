@@ -1,6 +1,8 @@
 using AutoMapper;
 using MyBlog.Core.DTOs;
+using MyBlog.Core.DTOs.Request.Skill;
 using MyBlog.Core.DTOs.Response.Skill;
+using MyBlog.Core.Entities;
 using MyBlog.Core.Repositories;
 using MyBlog.Core.Services;
 
@@ -25,5 +27,21 @@ public class SkillService : ISkillService
 
         var response = _mapper.Map<List<ResponseSkill>>(entities);
         return ApiBaseResponse<List<ResponseSkill>>.Success(200,response);
+    }
+
+    public async Task<ApiBaseResponse<ResponseSkill>> InsertAsync(RequestInsertSkill request)
+    {
+        if (request == null)
+            return ApiBaseResponse<ResponseSkill>.Fail(404, "Yetenek alanları boş olamaz");
+
+        var entity = _mapper.Map<Skill>(request);
+        entity.CreatedOn = DateTime.Now;
+        entity.CreatedBy = 1;
+        entity.UpdatedOn = entity.CreatedOn;
+        entity.UpdatedBy = entity.CreatedBy;
+
+        await _skillRepository.InsertAsync(entity);
+        var response = _mapper.Map<ResponseSkill>(entity);
+        return ApiBaseResponse<ResponseSkill>.Success(200, response);
     }
 }
