@@ -31,10 +31,12 @@ public class SkillService : ISkillService
 
     public async Task<ApiBaseResponse<ResponseSkill>> InsertAsync(RequestInsertSkill request)
     {
-        if (request == null)
+        if (request is null)
             return ApiBaseResponse<ResponseSkill>.Fail(404, "Yetenek alanları boş olamaz");
 
         var entity = _mapper.Map<Skill>(request);
+        if(entity is null)
+            return ApiBaseResponse<ResponseSkill>.Fail(500, "Sistemsel bir hata oluştu");
         entity.CreatedOn = DateTime.Now;
         entity.CreatedBy = 1;
         entity.UpdatedOn = entity.CreatedOn;

@@ -4,6 +4,11 @@
     ViewBag.Title = "title";
     Layout = "_AdminLayout";
 }
+<div class="card-header border-0">
+  <h3 class="mb-0">Yetenek Ekleme</h3>
+</div>
+<br>
+<br>
 
 <form class="form-group" asp-action="Insert" method="post">
     <label class="form-control" asp-for="Title">Yetenek Başlığı</label>
@@ -13,4 +18,4 @@
     <input class="form-control" asp-for="Value" />
     <br>
     <button type="submit" class="btn btn-primary">Kaydet</button>
-    </form>
+</form>
