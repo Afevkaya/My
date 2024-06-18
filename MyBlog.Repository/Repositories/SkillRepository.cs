@@ -15,7 +15,7 @@ public class SkillRepository: ISkillRepository
 
     public async Task<ICollection<Skill>> GetsAsync() => await GetQueryable().ToListAsync();
 
-    public async Task<Skill> GetAsync(int id) => await GetQueryable().FirstOrDefaultAsync(sk => sk.Id == id);
+    public async Task<Skill> GetAsync(int id) => await GetQueryable().AsNoTracking().FirstOrDefaultAsync(sk => sk.Id == id);
 
     public IQueryable<Skill> GetQueryable() => _myBlogDbContext.Skills.Where(sk => !sk.IsDeleted);
 

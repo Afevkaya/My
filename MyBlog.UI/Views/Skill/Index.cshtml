@@ -37,11 +37,37 @@
             </div>
           </div>
         </td>
-        <td><a href="#" class="btn btn-danger">Sil</a></td>
-        <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+        <td><button onclick="removeSkill(@skill.Id)" class="btn btn-danger">Sil</button></td>
+        <td><a href="/Skill/Update/@skill.Id" class="btn btn-warning">Güncelle</a></td>
       </tr>
     }
     </tbody>
   </table>
   <a href="/Skill/Insert" class="btn btn-success">Yeni Yetenek Ekle</a>
 </div>
+<script>
+  // Remove
+  function removeSkill(skillId){
+    var request = {
+      Id: skillId
+    }
+    fetch('/Skill/Remove', {
+      method: 'Post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Yetenek başarı ile silinmiştir.');
+             window.location.reload();
+        } else {
+            alert('Yetenek silinemedi');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+  
+  // Update
+</script>

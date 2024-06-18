@@ -1,6 +1,6 @@
-namespace MyBlog.Core.DTOs.Response.Skill;
+namespace MyBlog.Core.DTOs.Request.Skill;
 
-public class ResponseSkill: BaseResponse
+public class RequestUpdateSkill
 {
     public int Id { get; set; }
     public string Title { get; set; }

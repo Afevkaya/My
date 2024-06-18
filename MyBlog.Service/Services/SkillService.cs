@@ -1,6 +1,7 @@
 using AutoMapper;
 using MyBlog.Core.DTOs;
 using MyBlog.Core.DTOs.Request.Skill;
+using MyBlog.Core.DTOs.Response;
 using MyBlog.Core.DTOs.Response.Skill;
 using MyBlog.Core.Entities;
 using MyBlog.Core.Repositories;
@@ -29,6 +30,16 @@ public class SkillService : ISkillService
         return ApiBaseResponse<List<ResponseSkill>>.Success(200,response);
     }
 
+    public async Task<ApiBaseResponse<ResponseSkill>> GetAsync(int Id)
+    {
+        var entity = await _skillRepository.GetAsync(Id);
+        if (entity is null)
+            return ApiBaseResponse<ResponseSkill>.Fail(404, "Yetenek Bulunamadı");
+
+        var response = _mapper.Map<ResponseSkill>(entity);
+        return ApiBaseResponse<ResponseSkill>.Success(200, response);
+    }
+
     public async Task<ApiBaseResponse<ResponseSkill>> InsertAsync(RequestInsertSkill request)
     {
         if (request is null)
@@ -45,5 +56,31 @@ public class SkillService : ISkillService
         await _skillRepository.InsertAsync(entity);
         var response = _mapper.Map<ResponseSkill>(entity);
         return ApiBaseResponse<ResponseSkill>.Success(200, response);
+    }
+
+    public async Task<ApiBaseResponse<ResponseNoContent>> UpdateAsync(RequestUpdateSkill request)
+    {
+        if (request is null)
+            return ApiBaseResponse<ResponseNoContent>.Fail(404, "Model Boş");
+        
+        var entity = await _skillRepository.GetAsync(request.Id);
+        if(entity is null)
+            return ApiBaseResponse<ResponseNoContent>.Fail(404, "Yetenek Bulunamadı");
+
+        entity = _mapper.Map<Skill>(request);
+        entity.UpdatedOn = DateTime.Now;
+        entity.UpdatedBy = 1;
+        await _skillRepository.UpdateAsync(entity);
+        return ApiBaseResponse<ResponseNoContent>.Success(200);
+    }
+    
+    public async Task<ApiBaseResponse<ResponseNoContent>> RemoveAsync(RequestRemoveSkill request)
+    {
+        var entity = await _skillRepository.GetAsync(request.Id);
+        if (entity is null)
+            return ApiBaseResponse<ResponseNoContent>.Fail(404, "Entity Bulunamadı");
+
+        await _skillRepository.RemoveAsync(entity);
+        return ApiBaseResponse<ResponseNoContent>.Success(200);
     }
 }
