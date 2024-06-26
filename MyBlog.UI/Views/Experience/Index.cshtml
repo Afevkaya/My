@@ -1,0 +1,64 @@
+@model System.Collections.Generic.List<MyBlog.Core.DTOs.Response.Experience.ResponseExperience>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<div class="card-header border-0">
+  <h3 class="mb-0">Yetenek Listesi Tablosu</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+  <table class="table align-items-center table-flush">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col" class="sort" data-sort="name">#</th>
+      <th scope="col" class="sort" data-sort="budget">Başlık</th>
+      <th scope="col" class="sort" data-sort="status">Tarih</th>
+      <th scope="col" class="sort" data-sort="status">Açıklama</th>
+      <th scope="col">Sil</th>
+      <th scope="col" class="sort" data-sort="completion">Düzenle</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody class="list">
+    @foreach (var experience in Model)
+    {
+      <tr>
+        <td>@experience.Id</td>
+        <td class="budget">@experience.Name</td>
+        <td class="budget">@experience.Date</td>
+        <td class="budget">@experience.Description</td>
+        <td><button onclick="removeExperience(@experience.Id)" class="btn btn-danger">Sil</button></td>
+        <td><a href="/Experience/Update/@experience.Id" class="btn btn-warning">Güncelle</a></td>
+      </tr>
+    }
+    </tbody>
+  </table>
+  <a href="/Experience/Insert" class="btn btn-success">Yeni Deneyim Ekle</a>
+</div>
+<script>
+  // Remove
+  function removeExperience(experienceId){
+    var request = {
+      Id: experienceId
+    }
+    fetch('/Experience/Remove', {
+      method: 'Post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Deneyim başarı ile silinmiştir.');
+             window.location.reload();
+        } else {
+            alert('Deneyim silinemedi');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>

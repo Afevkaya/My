@@ -4,7 +4,7 @@ using MyBlog.Core.Repositories;
 
 namespace MyBlog.Repositories;
 
-public class ExperienceRepository: IExperinceRepository
+public class ExperienceRepository: IExperienceRepository
 {
     private readonly MyBlogDbContext _myBlogDbContext;
 
@@ -15,7 +15,7 @@ public class ExperienceRepository: IExperinceRepository
 
     public async Task<ICollection<Experience>> GetsAsync() => await GetQueryable().ToListAsync();
 
-    public async Task<Experience> GetAsync(int id) => await GetQueryable().FirstOrDefaultAsync(e => e.Id == id);
+    public async Task<Experience> GetAsync(int id) => await GetQueryable().AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
 
     public IQueryable<Experience> GetQueryable() => _myBlogDbContext.Experiences.Where(e => !e.IsDeleted);
 

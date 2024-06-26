@@ -2,7 +2,7 @@ using MyBlog.Core.Entities;
 
 namespace MyBlog.Core.Repositories;
 
-public interface IExperinceRepository
+public interface IExperienceRepository
 {
     IQueryable<Experience> GetQueryable();
     Task<ICollection<Experience>> GetsAsync();

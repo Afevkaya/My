@@ -5,16 +5,17 @@ namespace MyBlog.UI.ViewComponents;
 
 public class ExperienceListViewComponent: ViewComponent
 {
-    private readonly IExperinceService _experinceService;
+    private readonly IExperienceService _experienceService;
 
-    public ExperienceListViewComponent(IExperinceService experinceService)
+    public ExperienceListViewComponent(IExperienceService experienceService)
     {
-        _experinceService = experinceService;
+        _experienceService = experienceService;
     }
+
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var experiences = await _experinceService.GetsAsync();
+        var experiences = await _experienceService.GetsAsync();
         return View(experiences.Data);
     }
 }

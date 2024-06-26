@@ -1,0 +1,36 @@
+@model MyBlog.Core.DTOs.Response.Experience.ResponseExperience
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<div class="card-header border-0">
+  <h3 class="mb-0">Deneyim Düzenleme</h3>
+</div>
+<br>
+<br>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label class="form-control" asp-for="Name">Deneyim</label>
+        <input class="form-control" asp-for="Name"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="form-control" asp-for="Date">Tarih</label>
+        <input class="form-control" asp-for="Date" type="date"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="form-control" asp-for="ImageUrl"></label>
+        <input class="form-control" asp-for="ImageUrl">
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="form-control" asp-for="Description">Açıklama</label>
+        <textarea class="form-control" asp-for="Description" ></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
