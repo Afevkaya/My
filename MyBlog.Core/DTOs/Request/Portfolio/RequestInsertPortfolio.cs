@@ -1,6 +1,6 @@
-namespace MyBlog.Core.DTOs.Response.Portfolio;
+namespace MyBlog.Core.DTOs.Request.Portfolio;
 
-public class ResponsePortfolio: BaseResponse
+public class RequestInsertPortfolio
 {
     public string Name { get; set; }
     public string ImageUrl { get; set; }

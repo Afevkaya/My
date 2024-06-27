@@ -2,6 +2,7 @@ using AutoMapper;
 using MyBlog.Core.DTOs.Request;
 using MyBlog.Core.DTOs.Request.About;
 using MyBlog.Core.DTOs.Request.Experience;
+using MyBlog.Core.DTOs.Request.Portfolio;
 using MyBlog.Core.DTOs.Request.Skill;
 using MyBlog.Core.DTOs.Response.About;
 using MyBlog.Core.DTOs.Response.Contact;
@@ -32,6 +33,7 @@ public class MapProfile: Profile
         CreateMap<RequestUpdateSkill, Skill>().ReverseMap();
 
         CreateMap<Portfolio, ResponsePortfolio>().ReverseMap();
+        CreateMap<RequestInsertPortfolio, Portfolio>().ReverseMap();
 
         CreateMap<Experience, ResponseExperience>().ReverseMap();
         CreateMap<RequestInsertExperience, Experience>().ReverseMap();

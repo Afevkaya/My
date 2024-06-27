@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyBlog.Repositories;
 
@@ -11,9 +12,11 @@ using MyBlog.Repositories;
 namespace MyBlog.Repositories.Migrations
 {
     [DbContext(typeof(MyBlogDbContext))]
-    partial class MyBlogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240626131048_AddPropToPortfolioModels")]
+    partial class AddPropToPortfolioModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,15 +270,19 @@ namespace MyBlog.Repositories.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Image1")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image2")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image3")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image4")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -294,6 +301,7 @@ namespace MyBlog.Repositories.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Platform")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Price")
@@ -301,9 +309,10 @@ namespace MyBlog.Repositories.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Status")
+                    b.Property<bool>("Status")
                         .HasColumnType("bit");
 
                     b.Property<int?>("UpdatedBy")
