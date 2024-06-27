@@ -22,14 +22,3 @@ public class MyBlogDbContext : DbContext
     public DbSet<SocialMedia> SocialMedias { get; set; }
     public DbSet<Testimonial> Testimonials { get; set; }
 }
-
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<MyBlogDbContext>
-{
-    public MyBlogDbContext CreateDbContext(string[] args)
-    {
-        var builder = new DbContextOptionsBuilder<MyBlogDbContext>();
-        var connectionString = "Server=localhost;Database=MyBlogDb;User ID=SA;Password=Muhammet.evkaya.1;Trusted_Connection=False;Encrypt=False;";
-        builder.UseSqlServer(connectionString);
-        return new MyBlogDbContext(builder.Options);
-    }
-}
