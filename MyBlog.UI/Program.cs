@@ -1,13 +1,16 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using MyBlog.Core.DTOs.Request.Portfolio;
 using MyBlog.Core.Repositories;
 using MyBlog.Core.Services;
 using MyBlog.Repositories;
 using MyBlog.Services;
+using MyBlog.Services.Validations.Portfolio;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddValidatorsFromAssemblyContaining<RequestInsertPortfolioValidator>();
 
 builder.Services.AddDbContext<MyBlogDbContext>(options =>
 {

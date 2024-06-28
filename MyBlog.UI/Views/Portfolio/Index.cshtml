@@ -1,3 +1,4 @@
+@using MyBlog.Core.Entities
 @model List<MyBlog.Core.DTOs.Response.Portfolio.ResponsePortfolio>
 
 @{
@@ -18,8 +19,9 @@
             <th scope="col" class="sort" data-sort="name">Proje</th>
             <th scope="col" class="sort" data-sort="budget">Ücret</th>
             <th scope="col" class="sort" data-sort="status">Durum</th>
-            <th scope="col">Görseller</th>
             <th scope="col" class="sort" data-sort="completion">Tamamlanma Oranı</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Düzenle</th>
             <th scope="col"></th>
           </tr>
           </thead>
@@ -47,22 +49,6 @@
                 </span>
               </td>
               <td>
-                <div class="avatar-group">
-                  <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                    <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-1.jpg">
-                  </a>
-                  <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                    <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-2.jpg">
-                  </a>
-                  <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                    <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-3.jpg">
-                  </a>
-                  <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                    <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-4.jpg">
-                  </a>
-                </div>
-              </td>
-              <td>
                 <div class="d-flex align-items-center">
                   <span class="completion mr-2">@portfolio.Value%</span>
                   <div>
@@ -84,13 +70,39 @@
                   </div>
                 </div>
               </td>
+              <td><button onclick="removePortfolio(@portfolio.Id)" class="btn btn-outline-danger">Sil</button></td>
+              <td><a href="/Portfolio/Update/@portfolio.Id" class="btn btn-outline-warning">Güncelle</a></td>
             </tr>
           }
           </tbody>
         </table>
-              
       </div>
     </div>
   </div>
 </div>
 <a href="/Portfolio/Insert" class="btn btn-success">Yeni Proje Ekle</a>
+
+<script>
+  // Remove
+  function removePortfolio(portfolioId){
+    var request = {
+      Id: portfolioId
+    }
+    fetch('/Portfolio/Remove', {
+      method: 'Post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Proje başarı ile silinmiştir.');
+             window.location.reload();
+        } else {
+            alert('Proje silinemedi');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>

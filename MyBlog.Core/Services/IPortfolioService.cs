@@ -8,8 +8,8 @@ namespace MyBlog.Core.Services;
 public interface IPortfolioService
 {
     Task<ApiBaseResponse<List<ResponsePortfolio>>> GetsAsync();
-    // Task<ApiBaseResponse<ResponsePortfolio>> GetAsync(int id);
+    Task<ApiBaseResponse<ResponsePortfolio>> GetAsync(int id);
     Task<ApiBaseResponse<ResponsePortfolio>> InsertAsync(RequestInsertPortfolio request);
-    // Task UpdateAsync(ResponsePortfolio entity);
-    // Task RemoveAsync(ResponsePortfolio entity);
+    Task<ApiBaseResponse<ResponseNoContent>> UpdateAsync(RequestUpdatePortfolio request);
+    Task<ApiBaseResponse<ResponseNoContent>> RemoveAsync(RequestRemovePortfolio request);
 }

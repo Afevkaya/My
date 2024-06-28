@@ -34,6 +34,7 @@ public class MapProfile: Profile
 
         CreateMap<Portfolio, ResponsePortfolio>().ReverseMap();
         CreateMap<RequestInsertPortfolio, Portfolio>().ReverseMap();
+        CreateMap<RequestUpdatePortfolio, Portfolio>().ReverseMap();
 
         CreateMap<Experience, ResponseExperience>().ReverseMap();
         CreateMap<RequestInsertExperience, Experience>().ReverseMap();

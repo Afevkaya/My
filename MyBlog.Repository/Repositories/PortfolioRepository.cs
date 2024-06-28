@@ -15,7 +15,7 @@ public class PortfolioRepository: IPortfolioRepository
 
     public async Task<ICollection<Portfolio>> GetsAsync() => await GetQueryable().ToListAsync();
 
-    public async Task<Portfolio> GetAsync(int id) => await GetQueryable().FirstOrDefaultAsync(p => p.Id == id);
+    public async Task<Portfolio> GetAsync(int id) => await GetQueryable().AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
 
     public IQueryable<Portfolio> GetQueryable() => _myBlogDbContext.Porfolios.Where(p => !p.IsDeleted);
 
